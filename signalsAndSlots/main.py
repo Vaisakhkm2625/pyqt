@@ -7,6 +7,9 @@ from PyQt5 import QtGui as qtg
     
 
 class MainWindow(qtw.QWidget):
+
+    #self.authenticated = qtc.
+
     def __init__(self,*args,**kwargs):
         super().__init__(*args,**kwargs)
 
@@ -36,6 +39,7 @@ class MainWindow(qtw.QWidget):
 
         self.show()
 
+    @qtc.pyqtSlot(str) #optional, to provide type safy and other features
     def set_button_text(self, text):
         if text:
             self.submit_button.setText(f'login as {text}')
@@ -54,4 +58,4 @@ class MainWindow(qtw.QWidget):
 if __name__ == '__main__':
     app = qtw.QApplication([])
     w = MainWindow()
-    sys.exit(app.exec_())
+    sy.exit(app.exec_())
